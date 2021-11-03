@@ -44,8 +44,9 @@ Use the copy function below to do the following:
   1. receive an array as a parameter - you will pass in originalFlavors as an argument when the function is invoked.
   2. Return a copy of the received array  
 */
-
+//one perameter - can call it anything but its holing the place for the array you will pass in as your argument
 function copy(/*your code here*/){
+  //take a spread of the parameter
   /*your code here*/
 }    
 
@@ -63,9 +64,10 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
-
+//takeing one parameter - holding the place for an array
 function is31Flavors(/*your code here*/){
  /*your code here*/
+ //use conditional inside of here - if true return true, else return false
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -80,9 +82,11 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
+//2 params and a string (holding place for the new flavour)
 function addFlavor(/*your code here*/){
  /*your code here*/
+ //use unshift to add the new flavor to the beginning of teh recieved array
+ //return the array
 }
 
 
@@ -96,9 +100,11 @@ Use the removeLastFlavor function below to do the following:
 
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
-
+// 1 param which will be a placeholder for the array
 function removeLastFlavor(/*your code here*/){
  /*your code here*/
+ // use .pop to remove last item
+ //return the array
 }
 
 
@@ -113,9 +119,10 @@ Use the getFlavorByIndex function below to do the following:
 
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
-
+// 2 params array / number (holding a place for an index)
 function getFlavorByIndex(/*your code here*/){
   /*your code here*/
+  // array[0]
 }
 
 
@@ -133,9 +140,13 @@ Use the removeFlavorByName function below to do the following:
 
   HINT: You can use .splice() for this
 */
-
+// 2 params array and String we want to remove
 function removeFlavorByName(/*your code here*/){
   /*your code here*/
+  // loop through the array and check every index for the exact match of the String, if it exists, them remove it using .splice
+  // .splice(start, how many items to delete)
+
+  //outside of loop, return the array
 }
 
 
@@ -159,11 +170,26 @@ Use the filterByWord function below to do the following:
 
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
-
-function filterByWord(/*your code here*/){
-  /*your code here*/
+// 2 params - array / String
+function filterByWord(array, String){
+  // create new array to push our results to
+  const filtered [];
+  //loop through provided array and check every index
+  for (let i = 0; i < array.length; i++){
+  //if index includes the String, push it to the new array
+  if (array[i].includes(String)){
+    //push it to a new array
+    filtered.push(array[i]);
+  }
 }
 
+  //outside loop return new array
+  return filtered;
+}
+
+console.log('task 7', filterByWord(originalFlavors,'chocolate'));
+
+//uncomment the data and move it ABOVE the function
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
