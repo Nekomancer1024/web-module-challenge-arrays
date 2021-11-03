@@ -44,13 +44,13 @@ Use the copy function below to do the following:
   1. receive an array as a parameter - you will pass in originalFlavors as an argument when the function is invoked.
   2. Return a copy of the received array  
 */
-//one perameter - can call it anything but its holing the place for the array you will pass in as your argument
-function copy(/*your code here*/){
+//one parameter - can call it anything but its holing the place for the array you will pass in as your argument
+function copy(array){
   //take a spread of the parameter
-  /*your code here*/
+  return [...originalFlavors];
 }    
 
-
+console.log('task 1', copy(originalFlavors));
 
 
 
@@ -65,10 +65,15 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 //takeing one parameter - holding the place for an array
-function is31Flavors(/*your code here*/){
- /*your code here*/
+function is31Flavors(array){
  //use conditional inside of here - if true return true, else return false
+ if (array.length === 31){
+   return true;
+ } else {
+   return false;
+ }
 }
+ console.log('task 2', is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -83,12 +88,13 @@ Use the addFlavor function below to do the following:
 */
 
 //2 params and a string (holding place for the new flavour)
-function addFlavor(/*your code here*/){
- /*your code here*/
- //use unshift to add the new flavor to the beginning of teh recieved array
+function addFlavor(array, String){
+ //use unshift to add the new flavor to the beginning of the recieved array
+ array.unshift(String);
  //return the array
+ return array;
 }
-
+ console.log('task 3 ', addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -144,7 +150,7 @@ Use the removeFlavorByName function below to do the following:
 function removeFlavorByName(/*your code here*/){
   /*your code here*/
   // loop through the array and check every index for the exact match of the String, if it exists, them remove it using .splice
-  // .splice(start, how many items to delete)
+    // .splice(start, how many items to delete)
 
   //outside of loop, return the array
 }
@@ -173,7 +179,7 @@ Use the filterByWord function below to do the following:
 // 2 params - array / String
 function filterByWord(array, String){
   // create new array to push our results to
-  const filtered [];
+  const filtered = [];
   //loop through provided array and check every index
   for (let i = 0; i < array.length; i++){
   //if index includes the String, push it to the new array
@@ -182,7 +188,6 @@ function filterByWord(array, String){
     filtered.push(array[i]);
   }
 }
-
   //outside loop return new array
   return filtered;
 }
