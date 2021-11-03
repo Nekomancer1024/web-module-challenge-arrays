@@ -47,10 +47,10 @@ Use the copy function below to do the following:
 //one parameter - can call it anything but its holing the place for the array you will pass in as your argument
 function copy(array){
   //take a spread of the parameter
-  return [...originalFlavors];
+  return [...array];
 }    
 
-console.log('task 1', copy(originalFlavors));
+console.log('task 1 ', copy(originalFlavors));
 
 
 
@@ -107,12 +107,13 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 // 1 param which will be a placeholder for the array
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
  // use .pop to remove last item
+ array.pop();
  //return the array
+ return array;
 }
-
+console.log('task 4', removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -126,11 +127,11 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 // 2 params array / number (holding a place for an index)
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
-  // array[0]
+function getFlavorByIndex(array, number){
+  return array[number];
 }
 
+console.log('task 5 ', getFlavorByIndex(originalFlavors, 2));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -147,15 +148,19 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 // 2 params array and String we want to remove
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, flavor){
   // loop through the array and check every index for the exact match of the String, if it exists, them remove it using .splice
+  for (let i = 0; i < array.length; i++){
+    if (array[i] === flavor){
     // .splice(start, how many items to delete)
-
+    array.splice(i, 1);
+  }
+  }
   //outside of loop, return the array
+  return array;
 }
 
-
+console.log('task 6 ', removeFlavorByName(originalFlavors, 'Rocky Road'));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
